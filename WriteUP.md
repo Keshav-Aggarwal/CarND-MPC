@@ -52,6 +52,6 @@ Finally the weights with which the car drive properly in simulator are:
 | Acceleration (Sequential)  | 15.0  |
 
 ### Model Predictive Control with Latency
-To replicate the latency sleep method is used with a latency of 100ms to calculate the next state.
-
- 
+To compensate the latency, I updated the vehicle state by an latency time before feeding it into the MPC solver. I have taken 100ms latency into account.
+As a result the solution from the solver - steering and throttle better account for the current state of the vehicle.
+See lines 121-130 in the main.cpp.
